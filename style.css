@@ -1,0 +1,407 @@
+:root {
+  --bg: #0a0e2a;
+  --accent: #b81e24;
+  --light: #fbeec1;
+  --text: #ffffff;
+  --shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== 背景設定 ===== */
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  width: 100vw;
+  background: var(--accent);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 50px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar .slide img {
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+}
+
+.navbar .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar .logo img {
+  width: 140px;
+  height: auto;
+}
+
+.nav-links { 
+  list-style: none; 
+  display: flex; 
+  gap: 30px; 
+  margin: 0; 
+  padding: 0; 
+}
+.nav-links a { 
+  color: var(--text); 
+  text-decoration: none; 
+  transition: color 0.3s; 
+  white-space: nowrap; 
+}
+.nav-links a:hover { color: var(--light); }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--accent);
+  list-style: none;
+  padding: 10px;
+  top: 100%;
+  left: 0;
+  border-radius: 8px;
+  min-width: 140px;
+}
+.dropdown-menu li a { 
+  display: block; 
+  padding: 5px 10px; 
+  white-space: nowrap; 
+}
+.dropdown:hover .dropdown-menu { display: block; }
+
+/* ===== 主視覺輪播 ===== */
+.hero {
+  width: 100%;
+  max-width: 1920px;
+  height: 624px;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+
+.slider img {
+  width: 100%;
+  height: 624px;
+  object-fit: cover;
+}
+
+.hero .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: 2px solid var(--light);
+  color: var(--light);
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.hero .arrow:hover { background: var(--light); color: var(--accent); }
+.hero .arrow.left { left: 30px; }
+.hero .arrow.right { right: 30px; }
+
+/* ===== 新品上市 ===== */
+.new-products {
+  width: 100%;
+  max-width: 1920px;
+  margin: 80px auto;
+  padding: 40px 0;
+  position: relative; 
+}
+
+.new-products h2 img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+.product-slider {
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.product-track {
+  display: flex;
+  justify-content: center;
+  gap: 67px;
+  transition: transform 0.8s ease;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.product p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* 新增：首頁新品上市下方的「查看更多商品」按鈕 */
+.new-products .back-btn {
+  display: block;              
+  margin: 20px auto 0 auto;   
+  max-width: 200px;            
+  width: auto;                 
+  background-color: var(--accent);
+  color: var(--light);
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.new-products .back-btn:hover {
+  background-color: #e53935;
+}
+
+/* ===== 品牌理念 ===== */
+.brand-concept {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.brand-concept h2 img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+.concept-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.concept-text {
+  flex: 1;
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ddd;
+  text-align: left;
+}
+
+.concept-image {
+  flex: 1;
+  max-width: 763px;
+}
+
+.concept-image img {
+  width: 100%;
+  height: 429px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* ===== Footer ===== */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--accent);
+  color: var(--light);
+  margin-top: 40px;
+}
+
+footer img { 
+  width: 100px; 
+  margin-top: 10px; 
+  opacity: 0.9; 
+}
+
+/* ===== Products / Sale 頁 CSS ===== */
+.products-page, .sale-page {
+  max-width: 1200px;
+  margin: 80px auto;
+  text-align: center;
+  color: var(--text);
+}
+
+.products-page h1, .sale-page h1 {
+  font-size: 36px;
+  color: var(--light);
+  margin-bottom: 40px;
+}
+
+.products-grid, .sale-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.product-item, .sale-item {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+.product-item:hover, .sale-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item img, .sale-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-item p, .sale-item p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--light);
+}
+
+/* ===== 新增：原價劃掉 + 新價效果 ===== */
+.price {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+.sale-price {
+  color: var(--light);
+  font-weight: 700;
+}
+
+/* ===== 回到上一頁按鈕 ===== */
+.back-btn-container {
+  margin-top: 60px;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--light);
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #e53935;
+}
+
+
+/* ===== 滾動出現動畫效果 ===== */
+.fade-in, .slide-in-left, .slide-in-right {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* 左右滑入方向 */
+.slide-in-left {
+  transform: translateX(-60px);
+}
+.slide-in-right {
+  transform: translateX(60px);
+}
+
+/* 顯示後的狀態 */
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ===== 側拉選單 ===== */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px; /* 預設隱藏 */
+  width: 260px;
+  height: 100%;
+  background-color: rgba(10, 14, 42, 0.98);
+  box-shadow: var(--shadow);
+  transition: left 0.4s ease;
+  z-index: 1001; /* 要比 header 高 */
+  padding-top: 80px;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.side-menu a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.side-menu a:hover {
+  color: var(--accent);
+}
+

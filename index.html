@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猴樂飛玩具基地</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === 滾動出現動畫 === */
+    .fade-in, .slide-in-left, .slide-in-right {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .slide-in-left {
+      transform: translateX(-50px);
+    }
+    .slide-in-right {
+      transform: translateX(50px);
+    }
+    .show {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+
+    /* ===== 側拉選單 ===== */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -260px; /* 預設隱藏 */
+      width: 260px;
+      height: 100%;
+      background-color: rgba(10, 14, 42, 0.98);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: left 0.4s ease;
+      z-index: 1001; /* 要比 header 高 */
+      padding-top: 80px;
+    }
+
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-menu li {
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .side-menu a {
+      color: #fbeec1;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .side-menu a:hover {
+      color: #b81e24;
+    }
+
+    /* 半透明遮罩 */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease;
+      z-index: 1000;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <!-- 導覽列 -->
+  <header>
+    <nav class="navbar">
+      <div class="slide">
+        <img src="img/menu.png" alt="Menu">
+      </div>
+      <div class="logo">
+        <a href="index.html"><img src="img/navlogo.png" alt="猴樂飛玩具基地 Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li class="dropdown">
+          <a href="#">商品分類 ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html">新品上市</a></li>
+            <li><a href="sales.html">特價商品</a></li>
+            <li><a href="#">預購商品</a></li>
+          </ul>
+        </li>
+        <li><a href="#">關於我們</a></li>
+        <li><a href="#">聯絡方式</a></li>
+      </ul>
+    </nav>
+    <!-- 側拉選單 -->
+    <div class="side-menu" id="sideMenu">
+      <ul>
+        <li><a href="index.html">🏠 首頁</a></li>
+        <li><a href="#">會員登入/註冊</a></li>
+        <li><a href="#">🔥熱銷排行榜</a></li>
+        <li><a href="#">📦 收藏夾</a></li>
+        <li><a href="#">👥 追蹤我們</a></li>
+        <li><a href="#">📞 客服專區</a></li>
+      </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <!-- 主視覺 -->
+  <section class="hero fade-in">
+    <div class="slider">
+      <img src="img/banner4.jpg" alt="主視覺2">
+    </div>
+  </section>
+
+  <!-- 新品上市 -->
+  <section class="new-products fade-in">
+    <h2><img src="img/new_products_title.png" alt="新品上市"></h2>
+    <div class="product-slider">
+      <div class="product-track">
+        <div class="product slide-in-left">
+          <img src="img/toy1.jpg" alt="玩具1">
+          <p class="product-name"><b>NTD 1300</b><br>DaredevilBornAgain 夜魔俠</p>
+        </div>
+        <div class="product fade-in">
+          <img src="img/toy2.jpg" alt="玩具2">
+          <p class="product-name"><b>NTD 1200</b><br>Hulkbuster 反浩克裝甲</p>
+        </div>
+        <div class="product slide-in-right">
+          <img src="img/toy3.jpg" alt="玩具3">
+          <p class="product-name"><b>NTD 1400</b><br>PSYLOCKE&THANOS 靈蝶vs薩諾斯</p>
+        </div>
+      </div>
+    </div>
+    <a href="products.html" class="back-btn fade-in">查看更多商品</a>
+  </section>
+
+  <!-- 品牌理念 -->
+  <section class="brand-concept fade-in">
+    <h2><img src="img/brand_concept_title.png" alt="品牌理念"></h2>
+    <div class="concept-content">
+      <div class="concept-text slide-in-left">
+        <p><b>猴樂飛美系玩具基地致力推行小眾美系玩具，推廣80、90年代的美系作品玩具，星際大戰、漫威、變形金剛等童年作品。</b></p>
+      </div>
+      <div class="concept-image slide-in-right">
+        <img src="img/banner5.jpg" alt="品牌理念圖">
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>© 2025 猴樂飛玩具基地 | All Rights Reserved</p>
+    <p>營業地址：台北市大同區南京西路163號1樓18室</p>  
+    <p>運費與退貨政策 ｜ 隱私權聲明 ｜ 常見問題</p>
+    <img src="img/logo.jpg" alt="猴樂飛玩具基地">
+  </footer>
+
+  <script>
+    // ========== 側拉選單切換 ==========
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+    const menuBtn = document.querySelector('.slide img');
+
+    menuBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    // ========== 主視覺輪播 ==========
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+      });
+    }
+    if (slides.length > 0) {
+      showSlide(currentSlide);
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    }
+
+    // ========== 滾動出現動畫 ==========
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
