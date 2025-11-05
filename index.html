@@ -6,7 +6,7 @@
   <title>猴樂飛玩具基地</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* === 滾動出現動畫 === */
+
     .fade-in, .slide-in-left, .slide-in-right {
       opacity: 0;
       transform: translateY(30px);
@@ -23,17 +23,17 @@
       transform: translate(0, 0) !important;
     }
 
-    /* ===== 側拉選單 ===== */
+
     .side-menu {
       position: fixed;
       top: 0;
-      left: -260px; /* 預設隱藏 */
+      left: -260px; 
       width: 260px;
       height: 100%;
       background-color: rgba(10, 14, 42, 0.98);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: left 0.4s ease;
-      z-index: 1001; /* 要比 header 高 */
+      z-index: 1001; 
       padding-top: 80px;
     }
 
@@ -63,7 +63,7 @@
       color: #b81e24;
     }
 
-    /* 半透明遮罩 */
+ 
     .overlay {
       position: fixed;
       top: 0;
@@ -84,7 +84,7 @@
   </style>
 </head>
 <body>
-  <!-- 導覽列 -->
+
   <header>
     <nav class="navbar">
       <div class="slide">
@@ -107,7 +107,7 @@
         <li><a href="#">聯絡方式</a></li>
       </ul>
     </nav>
-    <!-- 側拉選單 -->
+
     <div class="side-menu" id="sideMenu">
       <ul>
         <li><a href="index.html">🏠 首頁</a></li>
@@ -121,14 +121,14 @@
     <div class="overlay" id="overlay"></div>
   </header>
 
-  <!-- 主視覺 -->
+
   <section class="hero fade-in">
     <div class="slider">
       <img src="img/banner4.jpg" alt="主視覺2">
     </div>
   </section>
 
-  <!-- 新品上市 -->
+
   <section class="new-products fade-in">
     <h2><img src="img/new_products_title.png" alt="新品上市"></h2>
     <div class="product-slider">
@@ -150,7 +150,7 @@
     <a href="products.html" class="back-btn fade-in">查看更多商品</a>
   </section>
 
-  <!-- 品牌理念 -->
+
   <section class="brand-concept fade-in">
     <h2><img src="img/brand_concept_title.png" alt="品牌理念"></h2>
     <div class="concept-content">
@@ -163,7 +163,7 @@
     </div>
   </section>
 
-  <!-- 頁尾 -->
+
   <footer>
     <p>© 2025 猴樂飛玩具基地 | All Rights Reserved</p>
     <p>營業地址：台北市大同區南京西路163號1樓18室</p>  
@@ -172,7 +172,7 @@
   </footer>
 
   <script>
-    // ========== 側拉選單切換 ==========
+
     const sideMenu = document.getElementById('sideMenu');
     const overlay = document.getElementById('overlay');
     const menuBtn = document.querySelector('.slide img');
@@ -187,7 +187,7 @@
       overlay.classList.remove('active');
     });
 
-    // ========== 主視覺輪播 ==========
+
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slider img');
     function showSlide(index) {
@@ -203,7 +203,7 @@
       }, 5000);
     }
 
-    // ========== 滾動出現動畫 ==========
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -217,3 +217,4 @@
   </script>
 </body>
 </html>
+
