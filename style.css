@@ -6,7 +6,7 @@
   --shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* ===== 背景設定 ===== */
+
 body {
   margin: 0;
   font-family: "Noto Sans TC", sans-serif;
@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 }
 
-/* ===== Header ===== */
+
 header {
   width: 100vw;
   background: var(--accent);
@@ -89,7 +89,7 @@ header {
 }
 .dropdown:hover .dropdown-menu { display: block; }
 
-/* ===== 主視覺輪播 ===== */
+
 .hero {
   width: 100%;
   max-width: 1920px;
@@ -129,7 +129,7 @@ header {
 .hero .arrow.left { left: 30px; }
 .hero .arrow.right { right: 30px; }
 
-/* ===== 新品上市 ===== */
+
 .new-products {
   width: 100%;
   max-width: 1920px;
@@ -179,7 +179,7 @@ header {
   font-size: 16px;
 }
 
-/* 新增：首頁新品上市下方的「查看更多商品」按鈕 */
+
 .new-products .back-btn {
   display: block;              
   margin: 20px auto 0 auto;   
@@ -198,7 +198,6 @@ header {
   background-color: #e53935;
 }
 
-/* ===== 品牌理念 ===== */
 .brand-concept {
   width: 90%;
   max-width: 1200px;
@@ -244,7 +243,7 @@ header {
   object-fit: cover;
 }
 
-/* ===== Footer ===== */
+
 footer {
   width: 100%;
   text-align: center;
@@ -260,7 +259,7 @@ footer img {
   opacity: 0.9; 
 }
 
-/* ===== Products / Sale 頁 CSS ===== */
+
 .products-page, .sale-page {
   max-width: 1200px;
   margin: 80px auto;
@@ -306,7 +305,7 @@ footer img {
   color: var(--light);
 }
 
-/* ===== 新增：原價劃掉 + 新價效果 ===== */
+
 .price {
   font-size: 18px;
   display: flex;
@@ -324,7 +323,7 @@ footer img {
   font-weight: 700;
 }
 
-/* ===== 回到上一頁按鈕 ===== */
+
 .back-btn-container {
   margin-top: 60px;
 }
@@ -344,14 +343,14 @@ footer img {
 }
 
 
-/* ===== 滾動出現動畫效果 ===== */
+
 .fade-in, .slide-in-left, .slide-in-right {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
 
-/* 左右滑入方向 */
+
 .slide-in-left {
   transform: translateX(-60px);
 }
@@ -359,23 +358,23 @@ footer img {
   transform: translateX(60px);
 }
 
-/* 顯示後的狀態 */
+
 .show {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-/* ===== 側拉選單 ===== */
+
 .side-menu {
   position: fixed;
   top: 0;
-  left: -260px; /* 預設隱藏 */
+  left: -260px; 
   width: 260px;
   height: 100%;
   background-color: rgba(10, 14, 42, 0.98);
   box-shadow: var(--shadow);
   transition: left 0.4s ease;
-  z-index: 1001; /* 要比 header 高 */
+  z-index: 1001; 
   padding-top: 80px;
 }
 
@@ -404,4 +403,5 @@ footer img {
 .side-menu a:hover {
   color: var(--accent);
 }
+
 
