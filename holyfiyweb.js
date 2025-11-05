@@ -1,4 +1,3 @@
-// ========== 點選 LOGO 回首頁 ==========
 const logo = document.querySelector('.logo img');
 if (logo) {
   logo.addEventListener('click', () => {
@@ -6,7 +5,7 @@ if (logo) {
   });
 }
 
-// ========== 滾動出現動畫效果 ==========
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -15,12 +14,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-// ✅ 只觀察有動畫 class 的元素（不會影響一般圖片）
+
 document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
   observer.observe(el);
 });
 
-// 側拉選單控制
+
 const sideMenu = document.getElementById('sideMenu');
 const overlay = document.getElementById('overlay');
 const menuBtn = document.querySelector('.slide img');
@@ -34,3 +33,4 @@ overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   overlay.classList.remove('active');
 });
+
